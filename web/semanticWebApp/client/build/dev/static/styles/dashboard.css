@@ -1,0 +1,47 @@
+.dashboard-view .boxes {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  .dashboard-view .boxes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.dashboard-view .boxes .box {
+  display: block;
+  text-decoration: none;
+  padding: 30px 20px;
+  border-radius: 2px;
+  text-shadow: 0 0 2px #eee;
+  margin: 20px;
+  width: 200px;
+  height: 150px;
+}
+.dashboard-view .boxes .box:hover {
+  box-shadow: 2px 2px rgba(132,143,203,0.4);
+}
+.dashboard-view .boxes .box .count {
+  display: inline-block;
+  float: right;
+  font-size: 2rem;
+  margin-top: 15px;
+}
+.dashboard-view .boxes .box .name {
+  margin-top: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 10px;
+}

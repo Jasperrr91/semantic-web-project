@@ -1,0 +1,25 @@
+.phone-main-view.full-width
+    .card(class="mt+")
+        table.data-table
+            thead
+                tr.heading
+                    th Subject
+                    th.hide-sm Authors
+                    th.text-center Action
+                tr
+                    td.divider.divider--dark(colspan="4")
+            tbody
+                tr.empty-row(ng-if="vm.papers.length === 0")
+                    td(colspan="4") No Papers found!
+                tr.data-table__clickable-row.phone-item(ng-repeat="paper in vm.papers")
+                    td
+                        span {{::paper.subject}}
+                    td.hide-sm
+                        span {{::paper.authors}}
+                    td.text-center
+                        a.btn.btn--m.btn--blue.btn--fab(
+                            ui-sref="root.paper.detail({id: paper.id})",
+                            lx-ripple, lx-tooltip="View Paper Info"
+                        )
+                            i.mdi.mdi-information
+

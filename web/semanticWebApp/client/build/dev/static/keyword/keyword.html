@@ -1,0 +1,27 @@
+
+<div class="phone-main-view full-width">
+  <div class="card mt+">
+    <table class="data-table">
+      <thead>
+        <tr class="heading">
+          <th>Name</th>
+          <th class="hide-sm">Document Count</th>
+          <th class="text-center">Action</th>
+        </tr>
+        <tr>
+          <td colspan="4" class="divider divider--dark"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="vm.keywords.length === 0" class="empty-row">
+          <td colspan="4">No Keywords found!</td>
+        </tr>
+        <tr ng-repeat="keyword in vm.keywords" class="data-table__clickable-row phone-item">
+          <td><span>{{::keyword.name}}</span></td>
+          <td class="hide-sm"><span>{{::keyword.documentCount}}</span></td>
+          <td class="text-center"><a ui-sref="root.keyword.detail({id: keyword.id})" lx-ripple="lx-ripple" lx-tooltip="View Keyword Info" class="btn btn--m btn--blue btn--fab"><i class="mdi mdi-information"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

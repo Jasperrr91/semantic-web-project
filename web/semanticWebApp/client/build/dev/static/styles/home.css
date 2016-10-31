@@ -1,0 +1,9 @@
+.home-view .card .title {
+  font-weight: normal;
+  padding-top: 150px;
+  background: url("../images/layout/logo.png") top center no-repeat;
+}
+.home-view .card .subtitle {
+  font-weight: normal;
+  color: #ddd1d1;
+}

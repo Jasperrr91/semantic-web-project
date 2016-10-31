@@ -1,0 +1,27 @@
+
+<div class="phone-main-view full-width">
+  <div class="card mt+">
+    <table class="data-table">
+      <thead>
+        <tr class="heading">
+          <th>Name</th>
+          <th class="hide-sm">Papers Published</th>
+          <th class="text-center">Action</th>
+        </tr>
+        <tr>
+          <td colspan="4" class="divider divider--dark"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="vm.authors.length === 0" class="empty-row">
+          <td colspan="4">No Authors found!</td>
+        </tr>
+        <tr ng-repeat="author in vm.authors" class="data-table__clickable-row phone-item">
+          <td><span>{{::author.name}}</span></td>
+          <td class="hide-sm"><span>{{::author.documentCount}}</span></td>
+          <td class="text-center"><a ui-sref="root.author.detail({id: author.id})" lx-ripple="lx-ripple" lx-tooltip="View Author Info" class="btn btn--m btn--blue btn--fab"><i class="mdi mdi-information"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

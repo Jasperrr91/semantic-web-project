@@ -1,0 +1,25 @@
+.phone-main-view.full-width
+    .card(class="mt+")
+        table.data-table
+            thead
+                tr.heading
+                    th Name
+                    th.hide-sm Document Count
+                    th.text-center Action
+                tr
+                    td.divider.divider--dark(colspan="4")
+            tbody
+                tr.empty-row(ng-if="vm.keywords.length === 0")
+                    td(colspan="4") No Keywords found!
+                tr.data-table__clickable-row.phone-item(ng-repeat="keyword in vm.keywords")
+                    td
+                        span {{::keyword.name}}
+                    td.hide-sm
+                        span {{::keyword.documentCount}}
+                    td.text-center
+                        a.btn.btn--m.btn--blue.btn--fab(
+                            ui-sref="root.keyword.detail({id: keyword.id})",
+                            lx-ripple, lx-tooltip="View Keyword Info"
+                        )
+                            i.mdi.mdi-information
+

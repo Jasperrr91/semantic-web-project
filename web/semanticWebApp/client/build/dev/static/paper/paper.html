@@ -1,0 +1,27 @@
+
+<div class="phone-main-view full-width">
+  <div class="card mt+">
+    <table class="data-table">
+      <thead>
+        <tr class="heading">
+          <th>Subject</th>
+          <th class="hide-sm">Authors</th>
+          <th class="text-center">Action</th>
+        </tr>
+        <tr>
+          <td colspan="4" class="divider divider--dark"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="vm.papers.length === 0" class="empty-row">
+          <td colspan="4">No Papers found!</td>
+        </tr>
+        <tr ng-repeat="paper in vm.papers" class="data-table__clickable-row phone-item">
+          <td><span>{{::paper.subject}}</span></td>
+          <td class="hide-sm"><span>{{::paper.authors}}</span></td>
+          <td class="text-center"><a ui-sref="root.paper.detail({id: paper.id})" lx-ripple="lx-ripple" lx-tooltip="View Paper Info" class="btn btn--m btn--blue btn--fab"><i class="mdi mdi-information"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+
+<div class="login-view">
+  <div ng-if="vm.needCheckLogin" class="login-checking tc-white"><i ng-class="{'mdi-sync icon-rotate-animation': !vm.userInfo, 'mdi-account': vm.userInfo}" class="icon icon--xl icon--flat mdi"></i>
+    <p class="loading-text">{{vm.userInfo ? vm.userInfo.name : 'Checking Login User...'}}</p>
+  </div>
+  <form name="vm.loginForm" ng-submit="vm.login(vm.credential)" novalidate="novalidate" class="card">
+    <div class="card__header p+">Please sign in with your Email and Password</div>
+    <div ng-if="vm.loginError" class="login-message {{vm.loginError.type}}">
+      <p class="tc-white">{{vm.loginError.text}}</p>
+    </div>
+    <div class="card__body p++">
+      <lx-text-field label="Email" fixed-label="true" icon="email">
+        <input type="email" ng-model="vm.credential.email" required="required" aio-focus-me="true"/>
+      </lx-text-field>
+      <lx-text-field label="Password" fixed-label="true" icon="key">
+        <input type="password" ng-model="vm.credential.password" required="required"/>
+      </lx-text-field>
+    </div>
+    <div class="card__actions text-center p+">
+      <button type="submit" ng-disabled="vm.loginForm.$invalid || vm.isRequest" ng-class="{'btn--is-disabled': vm.loginForm.$invalid}" lx-ripple="lx-ripple" aio-loading-button="vm.isRequest" class="btn btn--l btn--blue btn--raised btn-login">Sign In</button>
+    </div>
+  </form>
+</div>

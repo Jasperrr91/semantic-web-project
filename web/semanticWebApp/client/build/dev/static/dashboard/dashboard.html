@@ -1,0 +1,8 @@
+
+<div class="dashboard-view full-width">
+  <div class="card bgc-blue-100 p+">
+    <p>Welcome! So you are looking for cool suggestions on papers for further research? Look no further. Click one of the boxes below to get started or select an option from the menu.</p>
+  </div>
+  <div class="boxes"><a ng-repeat="product in ::vm.products" ui-sref="{{::product.link}}" class="box tc-white {{::vm.colors[$index % vm.colors.length]}}"><i class="icon icon--xl icon--flat mdi {{::product.icon}}"></i><span class="count">{{::product.count}}</span>
+      <p class="name">{{::product.name}}</p></a></div>
+</div>
